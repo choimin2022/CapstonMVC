@@ -1,0 +1,310 @@
+/*ss*/
+ @font-face {
+ 	     font-family: 'NotoSansKR';
+ 	     src : url("/CapStonWeb/JSP/font/NotoSansKR-Medium.otf") format('woff2'),;
+ 	     src : url("/CapStonWeb/JSP/font/NotoSansKR-Medium.otf") format('woff'),;
+      	}
+
+      	
+ body {
+        margin: 0;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        font-family: 'Noto Sans KR', sans-serif !important; 
+      }
+textarea {
+	width: 90%;
+	margin: 0 auto;
+}
+.tiger {
+  width: 6vh;
+  height: 6vh;
+  transform: translate(-5%, -2%);
+}
+	.tiger_chat{
+	width: 45px;
+	height: 45px;
+	float: left;
+	padding-right: 10px;	
+	}
+	
+
+	
+#top {
+	background-color:#2196f3;
+	/*text-align: center;*/
+	height: 7vh; width : 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 0px;
+}
+
+#button {
+	background-color: azure;
+	height: 500px;
+	width: 100%;
+	margin: auto;
+}
+
+#chat {
+	background-color: darkslategrey;
+	height: 100vh;
+	display: flex;
+}
+
+#chatM {
+	background-color: blue; width : 100%;
+	display: flex;
+	width: 100%
+}
+.footer{
+	height: 5vh;
+
+	}
+.topTitle {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+}
+fonts {
+  font-size: 16px;
+}
+
+/* 브라우저 창 크기가 350px이하가 되면 h1의 글자 크기를 줄여서 글자가 넘치는 것을 방지함 */
+@media screen and (max-height : 350px){
+	h1{font-size: 10px;}
+}
+
+.dictate {
+    float: right;
+    background: #ffffff url(/CapStonWeb/JSP/img/img_Main/icon-microphone.jpg) no-repeat center;
+    background-position: center;
+    background-size: AUTO;
+    width: 30px;
+    height: 25px;
+    margin-right: 1%;
+    position: inherit;
+    top: 15px;
+    right: 6%;
+}
+
+
+.dictate.on {background: #fff;}
+.dictate.on svg {display: block; margin: auto;}
+.dictate.on .ic-mike {display: none;}
+.dictate svg {display: none;}
+
+.btn_unit{position:absolute;right:10px;top:0;height: 7%;}
+.btn_menu{padding:17px 5px}
+button{border:0 none;background-color:transparent;cursor:pointer}
+.ico_comm{overflow:hidden;display:inline-block;background-size:contain;background-repeat:no-repeat;vertical-align:top;text-indent:-9999px}
+.ico_menu{width:18px;height:16px;background-image:url(/CapStonWeb/JSP/img/img_Main/ico_menu.png)}
+
+.button_area {
+display: none;
+position: absolute;
+top: 0px;
+right: 0;
+background-color: #ffffff;
+width: 15%;
+height: 100%;
+}
+
+.btn_close{position:absolute;right:10px;top:12px;padding:5px}
+.ico_close{width:16px;height:16px;background-image:url(/CapStonWeb/JSP/img/img_Main/ico_close.png)}
+
+.dimmed{display: none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);}
+
+.profile_box{padding-top:59px;text-align:center}
+.sub_h_tit{font-size:1.6rem;font-weight:500}
+
+.chat_logo_box{display:block;margin:25px auto 10px;width:56%;height:72%;border:1px solid #ddd;border-radius:50%;box-sizing:border-box}
+
+.sub_menu_item {
+    position: relative;
+    padding: 11px 0;
+    min-height: 41px;
+    border-bottom: 1px solid #939393;
+    box-sizing: border-box;
+}
+.sub_menu_list{
+    border-top: 1px solid #939393;
+  	position: absolute;
+ 	bottom: 50%;
+	left: 0;
+ 	width: 100%;
+ 	font-family: 'NotoSansKR';
+}
+    
+.midbox{
+	position: absolute;
+	bottom: 40%;
+	margin: auto;
+	width: 100%;
+	font-family: 'NotoSansKR';
+}
+
+.cmc_btn{width: 35px;
+    position: relative;
+    height: 25px;
+    left: 6px;
+    top: -2px;
+    background-image:url(/CapStonWeb/JSP/img/img_Main/chatAi.png);
+    overflow:hidden;display:inline-block;background-size:contain;background-repeat:no-repeat;vertical-align:top;text-indent:-9999px}
+
+.topBtn{
+	color:#ffffff;
+	font-weight: bold;
+    height: 100%;
+	
+}
+
+.cjnew{width: 35px;
+    position: relative;
+    height: 30px;
+    top: -5px;
+    background-image:url(/CapStonWeb/JSP/img/img_Main/cjnew2.png);
+    overflow:hidden;display:inline-block;background-size:contain;background-repeat:no-repeat;vertical-align:top;text-indent:-9999px}
+    
+.colorUl {
+  list-style-type: none;
+  padding: 0;
+  cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 9%;
+    border: 0 none;
+    background-color: #ffffff;
+    overflow: hidden;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.colorLi1 {
+  display: inline-block;
+  background-color: #4c6c73;
+  width: 32%;
+  margin: 2px;
+}
+.colorLi2 {
+  display: inline-block;
+  background-color: #2c40e2;
+  width: 32%;
+  margin: 2px
+}
+.colorLi3 {
+  display: inline-block;
+  background-color: #38b94d;
+  width: 32%;
+  margin: 2px
+}
+
+.colorB{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    text-indent: -9999px;
+}
+
+.colorPic{
+    background-color: skyblue;
+    width: 50px;
+    height: 24px;
+    margin-top: 2px;
+    }
+    
+.colorBack{
+	    position: relative;
+    bottom: -40%;
+    background-color: #e4f3ff;
+    width: 100%;
+    height: 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #939393;
+}
+
+.inquiry{
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 5%;
+  border: 0 none;
+  background-color: #e4f3ff;
+  overflow: hidden;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: top;
+  border: 1px solid #939393;
+}
+
+.colorSpan{
+	margin-top: 4px;
+}
+
+.icon-container {
+  position: absolute;
+    top: 40%;
+    left: 97%;
+}
+
+.info-box {
+  display: none;
+  position: absolute;
+  bottom: 35px;
+  right: -14px;
+  background-color: #f1f1f1;
+  padding: 5px;
+  width: 360px;
+}
+
+.info-box::after {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  right: 24px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #f1f1f1 transparent transparent transparent;
+}
+
+.icon-container:hover .info-box {
+  display: block;
+}
+
+.iconV{
+    width: 20px;
+    position: relative;
+    height: 30px;
+    top: -5px;
+    left: -9px;
+    background-image: url(/CapStonWeb/JSP/img/img_Main/voiceQ.png);
+    overflow: hidden;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    text-indent: -9999px;
+}
+
+.gptbox{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0%;
+    display: none;
+}

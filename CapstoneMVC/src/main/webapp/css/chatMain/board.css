@@ -1,0 +1,110 @@
+ body {
+        font-family: 'Noto Sans KR', sans-serif !important; 
+      }
+
+.notice-container {
+        width: 97%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        height: 604px;
+     	position: relative;
+    	bottom: -265px;
+    }
+        
+     .postBox {
+        height: 90%; /* 스크롤이 가능한 최대 높이 설정 */
+        overflow-y: auto; /* 세로 스크롤이 필요한 경우만 표시 */
+        margin-bottom: 20px; /* 게시물 상자와 다른 컨텐츠 사이의 간격 설정 */
+    }
+
+    .post {
+        /* 게시물 스타일 설정 */
+        margin-bottom: 20px; /* 개별 게시물 사이의 간격 설정 */
+    }
+        .notice-container h2 {
+            margin-top: 0;
+            margin-bottom: 4px;
+            font-size: 2rem;
+   		    font-weight: bold;
+   		    text-align: center;
+        }
+        
+        .post-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+       .post-content {
+        margin-top: 1px;
+        padding: 10px;
+        display: none;
+        max-height: 422px;
+        text-align: left; /* 텍스트를 왼쪽 정렬로 설정 */
+        background-color: white;
+        border: 1px solid #939393;
+    }
+    
+    
+	 .postClose {
+	 position: relative;
+	 top: -48px;
+	 right: -99.6%;
+	 width: 15px;
+	 font-size: 20px;
+	 font-weight: bold;
+	 cursor: pointer;
+	}
+	
+.boardQ-container {
+    position: absolute;
+    top: 5%;
+    left: 3%;
+}
+
+.boardQ-box {
+  display: none;
+  position: absolute;
+  bottom: -117px;
+  right: -335px;
+  background-color: #f1f1f1;
+  padding: 5px;
+  width: 369px;
+  text-align: left;
+}
+
+.boardQ-box::after {
+  content: "";
+  position: absolute;
+  bottom: 121px;
+  right: 346px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #f1f1f1 transparent;
+}
+
+.boardQ-container:hover .boardQ-box {
+  display: block;
+}
+
+.boardQ{
+    width: 20px;
+    position: relative;
+    height: 30px;
+    top: -5px;
+    left: -9px;
+    background-image: url(/CapStonWeb/JSP/img/img_Main/boardQ.png);
+    overflow: hidden;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    text-indent: -9999px;
+}

@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .main-content {
+      max-width: 800px;
+      padding: 20px;
+      margin: auto;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    .greeting {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .user-info {
+      margin-bottom: 20px;
+    }
+
+    .user-info p {
+      margin: 5px 0;
+    }
+
+    .actions {
+      text-align: center;
+    }
+
+    .actions input[type="button"] {
+      margin-right: 10px;
+      padding: 8px 20px;
+      color: #fff;
+      background-color: #343d46;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .actions input[type="button"]:hover {
+      background-color: #000000;
+    }
+
+    .admin-table {
+      margin-top: 20px;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .admin-table th,
+    .admin-table td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .admin-table th {
+      background-color: #555;
+      color: #fff;
+    }
+
+    .admin-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .admin-table tr:nth-child(odd) {
+      background-color: #fff;
+    }
+
+    .admin-table td {
+      color: #333;
+    }
