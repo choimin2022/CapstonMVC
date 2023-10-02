@@ -3,7 +3,6 @@
 <%@ page import="java.io.*, java.nio.charset.StandardCharsets" %>
 <!--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>-->
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +19,7 @@
 <link rel="stylesheet" type="text/css" href="/CapstoneMVC/css/chatMain/style.css">
 <link rel="stylesheet" type="text/css" href="/CapstoneMVC/css/chatMain/chatForm.css">
 <link rel="stylesheet" type="text/css" href="/CapstoneMVC/css/chatMain/ChatList.css">
+<script src="CapstoneMVC/script/chatButton.js"></script>
 <!--<script src="/CapStoneMVC/script/Indepart.js"></script>
 <script>
 //시간 나타내는 함수
@@ -33,8 +33,8 @@ document.querySelector('.time').textContent = time;
 </head>
 <body>
 
-	<!--상단 드롭메뉴-->
 
+	<!--상단 드롭메뉴-->
 	<div id="root">
 		<div id="top">
 			<!--상단바-->
@@ -42,9 +42,14 @@ document.querySelector('.time').textContent = time;
 			<span class="topTitle">와이거(Wyiger for comjeong)</span>
 			<!--좌측 상단 메뉴-->
 			<div class="btn_unit">
-			<button type="button" class="topBtn boardBtn" id="departBoard" onClick="location.href='member.do?command=departlistaction'">
+		<button type="button" class="topBtn boardBtn" id="BoardList" onClick="location.href='member.do?command=departlistaction'">
 			<span class="cjnew">컴정 new</span>컴정 new
 			</button>
+	<c:if test="${loginUser.userid != member.userid}">
+		<button type="button" class="topBtn MyPage" id="Mypage" onClick="location.href='member.do?command=main'">
+			<span class="cjnew">MyPage</span>MyPage
+			</button>
+	</c:if>
 			<button type="button" class="topBtn aiChat">
 			<span class="cmc_btn">ai 상담</span>ai 상담
 			</button>
@@ -62,15 +67,26 @@ document.querySelector('.time').textContent = time;
 				<div class="profile_box">
 					<h2 class="sub_h_tit">영진 컴정 챗봇</h2>
 					<img class="chat_logo_box" alt="image" src="/CapStonWeb/JSP/img/img_Main/Logo2.png">
-					<div><span class="loginName">비회원</span>님 환영합니다</div>
-				</div> 
+			<c:choose>
+			  <c:when test="${loginUser.userid == null}">
+			    <span class="loginName">비회원</span>
+			  </c:when>
+			  <c:otherwise>
+			    <span class="loginName">${loginUser.name}님 환영합니다</span>
+			  </c:otherwise>
+			</c:choose>
+							</div> 
 				<ul class="undermenu sub_menu_list">
+			<c:choose>
+			<c:when test="${loginUser.userid == member.userid}">
 				<!--<li><button class="m" id="menu-button" onclick="loadJsp('menu/menu.jsp')">메뉴</button></li>-->
 				  <li class="sub_menu_item"><button class="m" id="login-button" onClick="location.href='member.do?command=loginForm'">로그인</button></li>
 				  <li class="sub_menu_item"><button class="m" id="signup-button" onClick="location.href='member.do?command=joinForm'">회원가입</button></li>
-				<c:if test="${loginUser.userid != member.userid}">
+			</c:when>
+			<c:otherwise>
 				  <li class="sub_menu_item"><button class="m" id="logout-button" onClick="location.href='member.do?command=logout'">로그아웃</button></li>
-				</c:if>
+			</c:otherwise>
+			</c:choose>
 				<!-- <li class="sub_menu_item"><button class="m" id="board-button" onclick="('menu/board.jsp')">컴정 New</button></li>-->
 				</ul>
 				<div class="colorBack"><span class="colorSpan">챗봇 색상 커스텀</span>
@@ -95,6 +111,7 @@ document.querySelector('.time').textContent = time;
 		      <img class="tiger_chat" alt="image" src="/CapStonWeb/JSP/img/img_Main/character_main5.png">
 		      <div class="box">
 		        <div class="msg menumsg" id="">	
+		        
 		        	<div id="changebox">	  		        	
 	      			</div>  	        	          		 		             	   
 		      </div>
@@ -123,6 +140,7 @@ document.querySelector('.time').textContent = time;
                 </g>
             </svg>
         </button>
+        
         <div class="icon-container">
 		  <i class="iconV"></i>
 		  <div class="info-box">음성인식 tip<br><br>1. 왼쪽 마이크를 누르거나 스페이스바로 음성인식 시작/종료<br><br>2. 챗봇 동작 명령어<br>&nbsp;●위로올려줘: 스크롤바가 위로 올라가요!

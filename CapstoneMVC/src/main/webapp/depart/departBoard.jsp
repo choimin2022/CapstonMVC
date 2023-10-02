@@ -11,16 +11,24 @@
 </head>
 <body>
     <div class="container">
-        <c:forEach var="depart_member" items="${memberList}" varStatus="status">
+        <c:forEach var="board" items="${boardList}" varStatus="status">
             <div class="card">
-                <h3>${depart_member.d_name}</h3>
+                <h3>${board.b_title}</h3>
                 <div class="card-text">
-                    <p><strong>직급:</strong> ${depart_member.d_task}</p>
-                    <p><strong>이름:</strong> ${depart_member.name}</p>
-                    <p><strong>이미지:</strong> ${depart_member.d_img}</p>
-                    <p><strong>날짜:</strong> ${depart_member.d_date}</p>
+                    <p><strong>작성자:</strong> ${board.u_name}</p>
+                    <p><strong>내용:</strong> ${board.b_content}</p>
+                    <p><strong>날짜:</strong> ${board.b_date}</p>
+					<p><strong>좋아요:</strong> ${board.b_like}</p>
+			        <c:choose>
+			            <c:when test="${board.b_check}">
+			                <i class="fa-heart" style="color: red;"></i>
+			            </c:when>
+			            <c:otherwise>
+			                <i class="fa-heart"></i>
+			            </c:otherwise>
+			        </c:choose>
                 </div>
-                <button onclick="location.href='member.do?command=departdetail&userid=${depart_member.userid}'">상세 정보</button>
+                <button onclick="location.href='boardView.do?b_num=${board.b_num}'">상세 정보</button>
             </div>
         </c:forEach>
     </div>

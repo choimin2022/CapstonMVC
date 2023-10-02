@@ -21,11 +21,21 @@
         <p>phone: ${loginUser.phone}</p>
       </div>
       <div class="actions">
+      <c:choose>
+      
+      <c:when test="${loginUser.admin==0}">
+        <input type="button" value="로그아웃" onClick="location.href='member.do?command=logout'">
+        <input type="button" value="회원정보 변경" onClick="location.href='member.do?command=updateForm'">
+        <input type="button" value="회원탈퇴" onClick="deleteMember()">
+      </c:when>
+      <c:otherwise>
         <input type="button" value="로그아웃" onClick="location.href='member.do?command=logout'">
         <input type="button" value="회원정보 변경" onClick="location.href='member.do?command=updateForm'">
         <input type="button" value="회원탈퇴" onClick="deleteMember()">
         <input type="button" value="명함 등록" onClick="location.href='member.do?command=departmember'">
         <input type="button" value="명함 목록" onClick="location.href='member.do?command=departlistaction'">
+	</c:otherwise>
+       </c:choose>
       </div>
       <c:if test="${loginUser.admin==1}">
         <table class="admin-table">

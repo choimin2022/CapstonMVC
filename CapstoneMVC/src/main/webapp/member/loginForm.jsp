@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Login Form</title>
-	<link rel="stylesheet" type="text/css" href="/memberMGR/css/main/loginForm.css">
+	<link rel="stylesheet" type="text/css" href="/CapstoneMVC/css/main/loginForm.css">
   <script src="script/member.js"></script>
 </head>
 <body>

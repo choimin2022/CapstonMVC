@@ -17,6 +17,7 @@ public class ActionFactory {
 		else if(command.equals("loginForm")) ac = new LoginFormAction();
 		else if(command.equals("login")) ac = new LoginAction();
 		else if(command.equals("logout")) ac = new LogOutAction();
+		else if(command.equals("loginSession")) ac = new LoginSessionAction();
 		else if(command.equals("joinForm")) ac = new JoinFormAction();
 		else if(command.equals("idcheck")) ac = new IdCheckAction();
 		else if(command.equals("join")) ac = new JoinAction();

@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Join Form</title>
-  <style>
-	<link rel="stylesheet" type="text/css" href="/memberMGR/css/main/joinForm.css">
-  </style>
+
+	<link rel="stylesheet" type="text/css" href="/CapstoneMVC/css/main/joinForm.css">
+
   <script src="script/member.js"></script>
 </head>
 <body>
